@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80CAB80B2A4463EC0045663A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB80A2A4463EC0045663A /* AppDelegate.swift */; };
-		80CAB80D2A4463EC0045663A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB80C2A4463EC0045663A /* SceneDelegate.swift */; };
 		80CAB80F2A4463EC0045663A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB80E2A4463EC0045663A /* ViewController.swift */; };
-		80CAB8122A4463EC0045663A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CAB8102A4463EC0045663A /* Main.storyboard */; };
 		80CAB8152A4463EC0045663A /* HS_menu_delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB8132A4463EC0045663A /* HS_menu_delivery.xcdatamodeld */; };
 		80CAB8172A4463ED0045663A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80CAB8162A4463ED0045663A /* Assets.xcassets */; };
 		80CAB81A2A4463ED0045663A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CAB8182A4463ED0045663A /* LaunchScreen.storyboard */; };
@@ -39,9 +37,7 @@
 /* Begin PBXFileReference section */
 		80CAB8072A4463EC0045663A /* HS-menu-delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HS-menu-delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CAB80A2A4463EC0045663A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80CAB80C2A4463EC0045663A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		80CAB80E2A4463EC0045663A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		80CAB8112A4463EC0045663A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80CAB8142A4463EC0045663A /* HS_menu_delivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HS_menu_delivery.xcdatamodel; sourceTree = "<group>"; };
 		80CAB8162A4463ED0045663A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80CAB8192A4463ED0045663A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,13 +97,9 @@
 		80CAB8092A4463EC0045663A /* HS-menu-delivery */ = {
 			isa = PBXGroup;
 			children = (
+				80CAB8442A448E210045663A /* Resources */,
 				80CAB80A2A4463EC0045663A /* AppDelegate.swift */,
-				80CAB80C2A4463EC0045663A /* SceneDelegate.swift */,
 				80CAB80E2A4463EC0045663A /* ViewController.swift */,
-				80CAB8102A4463EC0045663A /* Main.storyboard */,
-				80CAB8162A4463ED0045663A /* Assets.xcassets */,
-				80CAB8182A4463ED0045663A /* LaunchScreen.storyboard */,
-				80CAB81B2A4463ED0045663A /* Info.plist */,
 				80CAB8132A4463EC0045663A /* HS_menu_delivery.xcdatamodeld */,
 			);
 			path = "HS-menu-delivery";
@@ -128,6 +120,16 @@
 				80CAB8302A4463ED0045663A /* HS_menu_deliveryUITestsLaunchTests.swift */,
 			);
 			path = "HS-menu-deliveryUITests";
+			sourceTree = "<group>";
+		};
+		80CAB8442A448E210045663A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				80CAB8162A4463ED0045663A /* Assets.xcassets */,
+				80CAB81B2A4463ED0045663A /* Info.plist */,
+				80CAB8182A4463ED0045663A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +238,6 @@
 			files = (
 				80CAB81A2A4463ED0045663A /* LaunchScreen.storyboard in Resources */,
 				80CAB8172A4463ED0045663A /* Assets.xcassets in Resources */,
-				80CAB8122A4463EC0045663A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +264,6 @@
 			files = (
 				80CAB80F2A4463EC0045663A /* ViewController.swift in Sources */,
 				80CAB80B2A4463EC0045663A /* AppDelegate.swift in Sources */,
-				80CAB80D2A4463EC0045663A /* SceneDelegate.swift in Sources */,
 				80CAB8152A4463EC0045663A /* HS_menu_delivery.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +301,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		80CAB8102A4463EC0045663A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80CAB8112A4463EC0045663A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		80CAB8182A4463ED0045663A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,10 +434,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HS-menu-delivery/Info.plist";
+				INFOPLIST_FILE = "HS-menu-delivery/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -470,10 +461,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HS-menu-delivery/Info.plist";
+				INFOPLIST_FILE = "HS-menu-delivery/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
