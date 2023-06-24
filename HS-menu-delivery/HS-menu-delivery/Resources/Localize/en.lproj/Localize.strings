@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  HS-menu-delivery
+
+  Created by VladimirCH on 22.06.2023.
+  
+*/
+
+"Example.Button.changeText" = "Change text";
+
+//
+"TabItem.menu" = "Menu";
+"TabItem.contacts" = "Contacts";
+"TabItem.profile" = "Profile";
+"TabItem.cart" = "Cart";

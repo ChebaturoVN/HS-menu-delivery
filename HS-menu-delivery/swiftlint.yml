@@ -1,0 +1,63 @@
+# Disable some rules for good
+disabled_rules:
+  - notification_center_detachment
+  - inclusive_language
+
+excluded:
+  - Pods
+  - Generated
+  - HS-menu-deliveryUITests
+  - HS-menu-deliveryTests
+  
+shorthand_operator:
+  severity: warning
+
+# Only way to support multiple protocol conformances on next line
+colon:
+  flexible_right_spacing: true
+
+force_try:
+  severity: error
+
+opening_brace:
+  severity: error
+
+# Max line length
+line_length:
+  warning: 150
+  error: 250
+
+# class / struct length
+type_body_length: 500 # should be aimed to value near 200
+
+# Max file size
+file_length:
+  warning: 500
+  error: 1000
+
+# Backend for error reporting
+reporter: xcode
+
+# Too many warnings becomes an error
+warning_threshold: 100
+
+# Too big functions
+function_body_length: 50 # warning for now, should be error
+
+# Too big tuples
+large_tuple: 3 # Actually 2 is a default value, and it should be an error
+
+# How many arguments function may have
+function_parameter_count: 5
+
+# type_name with \`
+type_name:
+  allowed_symbols: ['\`']
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+
+identifier_name:
+  allowed_symbols: ['\`', '_']
+  min_length: 3
+  max_length: 80

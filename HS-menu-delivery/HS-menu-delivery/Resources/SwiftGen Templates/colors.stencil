@@ -1,0 +1,24 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+{% macro colorName name %}{{ name|escapeReservedKeywords }}{% endmacro %}
+{% macro rgbaValue color %}0x{{ color.red }}{{ color.green }}{{ color.blue }}{{ color.alpha }}{% endmacro %}
+{% macro colorValue color %}UIColor(rgbaValue: {% call rgbaValue color %}){% endmacro %}
+import UIKit
+
+extension UIColor {
+
+    {% for color in palettes.first.colors %}
+    /// {% call rgbaValue color %}
+    static let {% call colorName color.name %} = {% call colorValue color %}
+    {% endfor %}
+
+    convenience init(rgbaValue: UInt32) {
+        self.init(
+            red: CGFloat((rgbaValue >> 24) & 0xff) / 255,
+            green: CGFloat((rgbaValue >> 16) & 0xff) / 255,
+            blue: CGFloat((rgbaValue >> 8) & 0xff) / 255,
+            alpha: CGFloat((rgbaValue) & 0xff) / 255
+        )
+    }
+}
