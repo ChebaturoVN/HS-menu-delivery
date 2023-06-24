@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftGen;
+			productName = SwiftGen;
 		};
 		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
@@ -24,6 +25,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -170,7 +172,7 @@
 		719D5C10E576319D9919E25FDAC99DD0 /* Pods-HS-menu-deliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HS-menu-deliveryTests.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73DD19A319F9D145CFCBFDEF291C002E /* Pods-HS-menu-deliveryTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HS-menu-deliveryTests"; path = Pods_HS_menu_deliveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B32EC8CFC69C285474DB5CDDA3A813A /* Pods-HS-menu-delivery */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HS-menu-delivery"; path = Pods_HS_menu_delivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B32EC8CFC69C285474DB5CDDA3A813A /* Pods_HS_menu_delivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HS_menu_delivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F816DD9616612FB925EDCF50F2821C /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Sources/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		88FA9C322858E4682A08A7DCB4FBFB50 /* Pods-HS-menu-deliveryTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HS-menu-deliveryTests-umbrella.h"; sourceTree = "<group>"; };
 		89DF765D3CB57858FADD52603EE68E6D /* Pods-HS-menu-delivery-HS-menu-deliveryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HS-menu-delivery-HS-menu-deliveryUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,10 +180,10 @@
 		8D1F997B812A06813570867118B03B8C /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Sources/ConstraintPriority.swift; sourceTree = "<group>"; };
 		8FC1B4CE4F8494D213D81A4B00A6CF07 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Sources/ConstraintDescription.swift; sourceTree = "<group>"; };
 		92A15089B45FA9FCEE32994E3581CF7B /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Sources/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
-		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD7F2282D2B7D54ED317948C9DAF039 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Sources/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		9CD27D5F7C21E1FF45D880B473D184EF /* Pods-HS-menu-deliveryTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HS-menu-deliveryTests-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A00D55AEC3941EC8145A64AB2A156F4F /* SwiftGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.release.xcconfig; sourceTree = "<group>"; };
 		A2C3FB0D19B10DF83C7E9B02289B4CD2 /* Pods-HS-menu-delivery-HS-menu-deliveryUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HS-menu-delivery-HS-menu-deliveryUITests-Info.plist"; sourceTree = "<group>"; };
 		A836DF54B10627C7A05443A6B54CF5EC /* Pods-HS-menu-delivery-HS-menu-deliveryUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HS-menu-delivery-HS-menu-deliveryUITests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -282,7 +284,6 @@
 			children = (
 				881B6D70DA5E92D95996993D6A8FB6CA /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -336,7 +337,6 @@
 				9AD7F2282D2B7D54ED317948C9DAF039 /* UILayoutSupport+Extensions.swift */,
 				D397E54F298695AD2F718401F7CA58E5 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -409,7 +409,6 @@
 			children = (
 				BE430C48B3DC590B51F12F51CD155A56 /* Support Files */,
 			);
-			name = SwiftGen;
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
@@ -433,10 +432,10 @@
 		FA4955A6133575ACFDA8A7369C04E442 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7B32EC8CFC69C285474DB5CDDA3A813A /* Pods-HS-menu-delivery */,
+				7B32EC8CFC69C285474DB5CDDA3A813A /* Pods_HS_menu_delivery.framework */,
 				60B6388935B0C8BB991164A11CE57CF2 /* Pods-HS-menu-delivery-HS-menu-deliveryUITests */,
 				73DD19A319F9D145CFCBFDEF291C002E /* Pods-HS-menu-deliveryTests */,
-				979486118B3E90C08386079D57962701 /* SnapKit */,
+				979486118B3E90C08386079D57962701 /* SnapKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -510,7 +509,7 @@
 			);
 			name = SnapKit;
 			productName = SnapKit;
-			productReference = 979486118B3E90C08386079D57962701 /* SnapKit */;
+			productReference = 979486118B3E90C08386079D57962701 /* SnapKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		37A6E2F247431A585DB6BA2B73624DE1 /* Pods-HS-menu-deliveryTests */ = {
@@ -550,7 +549,7 @@
 			);
 			name = "Pods-HS-menu-delivery";
 			productName = Pods_HS_menu_delivery;
-			productReference = 7B32EC8CFC69C285474DB5CDDA3A813A /* Pods-HS-menu-delivery */;
+			productReference = 7B32EC8CFC69C285474DB5CDDA3A813A /* Pods_HS_menu_delivery.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DB0B72B2D0EBCBA2CE5674C83671F729 /* Pods-HS-menu-delivery-HS-menu-deliveryUITests */ = {
