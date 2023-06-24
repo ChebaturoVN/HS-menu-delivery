@@ -1,0 +1,30 @@
+input_dir: HS-menu-delivery/Resources/
+output_dir: HS-menu-delivery/Resources/Generated/
+
+strings:
+  inputs:
+    - Localize/en.lproj/Localize.strings
+  outputs:
+    - templateName: structured-swift5
+      output: Strings.swift
+
+xcassets:
+  inputs:
+    - Assets.xcassets
+  outputs:
+    - templatePath: HS-menu-delivery/Resources/SwiftGen Templates/xcassets.stencil
+      output: Images.swift
+
+fonts:
+  inputs:
+    - Fonts
+  outputs:
+    - templateName: swift5
+      output: Fonts.swift
+
+colors:
+  inputs:
+    - Colors.txt
+  outputs:
+    - templatePath: HS-menu-delivery/Resources/SwiftGen Templates/colors.stencil
+      output: Colors.swift

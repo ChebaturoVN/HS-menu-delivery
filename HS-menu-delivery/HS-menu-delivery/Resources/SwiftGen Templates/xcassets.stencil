@@ -1,0 +1,14 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+import UIKit
+
+{% macro iconName name %}{{ name|escapeReservedKeywords }}{% endmacro %}
+extension UIImage {
+
+    {% for asset in catalogs.first.assets %}
+    {% if asset.type == "image" %}
+    static let {% call iconName asset.name %} = UIImage(named: "{{asset.value}}")
+    {% endif %}
+    {% endfor %}
+}
