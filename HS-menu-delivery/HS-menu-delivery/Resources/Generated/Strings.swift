@@ -11,11 +11,9 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
-  internal enum Example {
-    internal enum Button {
-      /// Change text
-      internal static let changeText = L10n.tr("Localize", "Example.Button.changeText")
-    }
+  internal enum Country {
+    /// Moscow
+    internal static let moscow = L10n.tr("Localize", "Country.moscow")
   }
 
   internal enum TabItem {

@@ -24,6 +24,17 @@
 		808A287D2A45A0F700A63997 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A287C2A45A0F700A63997 /* TabItem.swift */; };
 		808A28852A46E95200A63997 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28842A46E95200A63997 /* BannerCell.swift */; };
 		808A288A2A46F36100A63997 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28892A46F36100A63997 /* UIView+AddSubviews.swift */; };
+		808A28902A46FA1E00A63997 /* LeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A288F2A46FA1E00A63997 /* LeftButtonView.swift */; };
+		808A28922A4758EC00A63997 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28912A4758EC00A63997 /* Fonts.swift */; };
+		808A28972A476BBE00A63997 /* BannerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28962A476BBE00A63997 /* BannerCollectionCell.swift */; };
+		808A28992A476EA000A63997 /* BannerCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28982A476EA000A63997 /* BannerCellModel.swift */; };
+		808A289B2A482ECC00A63997 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A289A2A482ECC00A63997 /* MenuRouter.swift */; };
+		808A289C2A4830C100A63997 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A284E2A449B9900A63997 /* MenuViewController.swift */; };
+		808A28A02A485D1300A63997 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A289F2A485D1300A63997 /* ImageManager.swift */; };
+		808A28A22A49E9A200A63997 /* HorizontalMenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28A12A49E9A200A63997 /* HorizontalMenuCollectionView.swift */; };
+		808A28A42A49EC4E00A63997 /* HorizontalMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28A32A49EC4E00A63997 /* HorizontalMenuCollectionViewCell.swift */; };
+		808A28A62A4C255F00A63997 /* HorizontalMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28A52A4C255F00A63997 /* HorizontalMenuCell.swift */; };
+		808A28AC2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28AB2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift */; };
 		80CAB80B2A4463EC0045663A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB80A2A4463EC0045663A /* AppDelegate.swift */; };
 		80CAB8152A4463EC0045663A /* HS_menu_delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB8132A4463EC0045663A /* HS_menu_delivery.xcdatamodeld */; };
 		80CAB8172A4463ED0045663A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80CAB8162A4463ED0045663A /* Assets.xcassets */; };
@@ -76,10 +87,19 @@
 		808A28762A4593FB00A63997 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		808A28782A459AD900A63997 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		808A287C2A45A0F700A63997 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
-		808A287F2A45B18C00A63997 /* sfuidisplay_heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfuidisplay_heavy.ttf; sourceTree = "<group>"; };
-		808A28802A45B18C00A63997 /* sfuidisplay_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfuidisplay_bold.ttf; sourceTree = "<group>"; };
 		808A28842A46E95200A63997 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		808A28892A46F36100A63997 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
+		808A288F2A46FA1E00A63997 /* LeftButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftButtonView.swift; sourceTree = "<group>"; };
+		808A28912A4758EC00A63997 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		808A28942A47626C00A63997 /* Times New Roman Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Times New Roman Bold.ttf"; sourceTree = "<group>"; };
+		808A28962A476BBE00A63997 /* BannerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionCell.swift; sourceTree = "<group>"; };
+		808A28982A476EA000A63997 /* BannerCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCellModel.swift; sourceTree = "<group>"; };
+		808A289A2A482ECC00A63997 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		808A289F2A485D1300A63997 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		808A28A12A49E9A200A63997 /* HorizontalMenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalMenuCollectionView.swift; sourceTree = "<group>"; };
+		808A28A32A49EC4E00A63997 /* HorizontalMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		808A28A52A4C255F00A63997 /* HorizontalMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalMenuCell.swift; sourceTree = "<group>"; };
+		808A28AB2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		80CAB8072A4463EC0045663A /* HS-menu-delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HS-menu-delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CAB80A2A4463EC0045663A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80CAB8142A4463EC0045663A /* HS_menu_delivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HS_menu_delivery.xcdatamodel; sourceTree = "<group>"; };
@@ -160,6 +180,8 @@
 		808A284A2A449A1A00A63997 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				808A289A2A482ECC00A63997 /* MenuRouter.swift */,
+				808A28932A475A4600A63997 /* Models */,
 				808A28832A46E92500A63997 /* Cell */,
 				808A284D2A449A9200A63997 /* Presenter */,
 				808A284C2A449A7E00A63997 /* Interactor */,
@@ -172,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				808A284E2A449B9900A63997 /* MenuViewController.swift */,
+				808A28A12A49E9A200A63997 /* HorizontalMenuCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,8 +218,7 @@
 		808A285C2A44E2B400A63997 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				808A28802A45B18C00A63997 /* sfuidisplay_bold.ttf */,
-				808A287F2A45B18C00A63997 /* sfuidisplay_heavy.ttf */,
+				808A28942A47626C00A63997 /* Times New Roman Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -213,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				808A285F2A44E32500A63997 /* Colors.swift */,
+				808A28912A4758EC00A63997 /* Fonts.swift */,
 				808A28632A44E39F00A63997 /* Strings.swift */,
 				808A28612A44E38400A63997 /* Images.swift */,
 			);
@@ -251,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				808A28842A46E95200A63997 /* BannerCell.swift */,
+				808A28A52A4C255F00A63997 /* HorizontalMenuCell.swift */,
+				808A28952A476B5A00A63997 /* Coll */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -266,6 +291,7 @@
 		808A28872A46F33E00A63997 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				808A289D2A485CE000A63997 /* Managers */,
 				808A28882A46F34B00A63997 /* UIView */,
 			);
 			name = Extensions;
@@ -290,8 +316,43 @@
 		808A288C2A46F3D100A63997 /* NavBarItems */ = {
 			isa = PBXGroup;
 			children = (
+				808A288F2A46FA1E00A63997 /* LeftButtonView.swift */,
 			);
 			path = NavBarItems;
+			sourceTree = "<group>";
+		};
+		808A28932A475A4600A63997 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				808A28982A476EA000A63997 /* BannerCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		808A28952A476B5A00A63997 /* Coll */ = {
+			isa = PBXGroup;
+			children = (
+				808A28962A476BBE00A63997 /* BannerCollectionCell.swift */,
+				808A28A32A49EC4E00A63997 /* HorizontalMenuCollectionViewCell.swift */,
+				808A28AB2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift */,
+			);
+			path = Coll;
+			sourceTree = "<group>";
+		};
+		808A289D2A485CE000A63997 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				808A289E2A485CF900A63997 /* ImageManager */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		808A289E2A485CF900A63997 /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				808A289F2A485D1300A63997 /* ImageManager.swift */,
+			);
+			name = ImageManager;
 			sourceTree = "<group>";
 		};
 		80CAB7FE2A4463EC0045663A = {
@@ -644,18 +705,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				808A28972A476BBE00A63997 /* BannerCollectionCell.swift in Sources */,
+				808A28922A4758EC00A63997 /* Fonts.swift in Sources */,
+				808A28A22A49E9A200A63997 /* HorizontalMenuCollectionView.swift in Sources */,
 				808A28602A44E32500A63997 /* Colors.swift in Sources */,
 				808A28642A44E39F00A63997 /* Strings.swift in Sources */,
 				80CAB80B2A4463EC0045663A /* AppDelegate.swift in Sources */,
 				80CAB8152A4463EC0045663A /* HS_menu_delivery.xcdatamodeld in Sources */,
+				808A28A62A4C255F00A63997 /* HorizontalMenuCell.swift in Sources */,
+				808A28AC2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift in Sources */,
 				808A28622A44E38400A63997 /* Images.swift in Sources */,
+				808A28992A476EA000A63997 /* BannerCellModel.swift in Sources */,
+				808A28902A46FA1E00A63997 /* LeftButtonView.swift in Sources */,
 				808A28772A4593FB00A63997 /* TabBarCoordinator.swift in Sources */,
 				808A28532A449D2D00A63997 /* MenuInteractor.swift in Sources */,
+				808A28A02A485D1300A63997 /* ImageManager.swift in Sources */,
 				808A28512A449C1C00A63997 /* MenuPresenter.swift in Sources */,
 				808A288A2A46F36100A63997 /* UIView+AddSubviews.swift in Sources */,
 				808A287D2A45A0F700A63997 /* TabItem.swift in Sources */,
 				808A28852A46E95200A63997 /* BannerCell.swift in Sources */,
 				808A28792A459AD900A63997 /* TabBarController.swift in Sources */,
+				808A289B2A482ECC00A63997 /* MenuRouter.swift in Sources */,
+				808A28A42A49EC4E00A63997 /* HorizontalMenuCollectionViewCell.swift in Sources */,
 				808A284F2A449B9900A63997 /* MenuViewController.swift in Sources */,
 				808A28552A44C80500A63997 /* AppCoordinator.swift in Sources */,
 			);
@@ -674,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CAB8312A4463ED0045663A /* HS_menu_deliveryUITestsLaunchTests.swift in Sources */,
+				808A289C2A4830C100A63997 /* MenuViewController.swift in Sources */,
 				80CAB82F2A4463ED0045663A /* HS_menu_deliveryUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

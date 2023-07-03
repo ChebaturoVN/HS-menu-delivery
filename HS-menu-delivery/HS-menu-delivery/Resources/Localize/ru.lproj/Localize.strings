@@ -6,10 +6,9 @@
   
 */
 
-"Example.Button.changeText" = "Change text";
-
 //
 "TabItem.menu" = "Меню";
 "TabItem.contacts" = "Контакты";
 "TabItem.profile" = "Профиль";
 "TabItem.cart" = "Корзина";
+"Country.moscow" = "Москва";

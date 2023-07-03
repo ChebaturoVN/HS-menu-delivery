@@ -5,9 +5,12 @@ target 'HS-menu-delivery' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'SnapKit'
-  pod 'SwiftGen', '~> 6.5.1'
-  pod 'SwiftLint', '~> 0.45.0'
+  pod 'SwiftGen'
+  pod 'SwiftLint'
+  pod 'Kingfisher'
 
   # Pods for HS-menu-delivery
 

@@ -13,6 +13,10 @@ extension UIColor {
     static let tabBarNotSelect = UIColor(rgbaValue: 0xc3c4c9ff)
     /// 0xfd3a69ff
     static let tabBarSelect = UIColor(rgbaValue: 0xfd3a69ff)
+    /// 0xfd3a69ff
+    static let textMenuHorizontal = UIColor(rgbaValue: 0xfd3a69ff)
+    /// 0x222831ff
+    static let textTitleLabel = UIColor(rgbaValue: 0x222831ff)
 
     convenience init(rgbaValue: UInt32) {
         self.init(

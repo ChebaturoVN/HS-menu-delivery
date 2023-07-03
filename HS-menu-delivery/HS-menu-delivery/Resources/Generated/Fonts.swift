@@ -18,12 +18,11 @@ internal typealias Font = FontConvertible.Font
 
 // swiftlint:disable identifier_name line_length type_body_length
 internal enum FontFamily {
-  internal enum SFUIDisplay {
-    internal static let bold = FontConvertible(name: "SFUIDisplay-Bold", family: "SF UI Display", path: "sfuidisplay_bold.ttf")
-    internal static let heavy = FontConvertible(name: "SFUIDisplay-Heavy", family: "SF UI Display", path: "sfuidisplay_heavy.ttf")
-    internal static let all: [FontConvertible] = [bold, heavy]
+  internal enum TimesNewRoman {
+    internal static let bold = FontConvertible(name: "TimesNewRomanPS-BoldMT", family: "Times New Roman", path: "TimesNewRomanBold.ttf")
+    internal static let all: [FontConvertible] = [bold]
   }
-  internal static let allCustomFonts: [FontConvertible] = [SFUIDisplay.all].flatMap { $0 }
+  internal static let allCustomFonts: [FontConvertible] = [TimesNewRoman.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }
