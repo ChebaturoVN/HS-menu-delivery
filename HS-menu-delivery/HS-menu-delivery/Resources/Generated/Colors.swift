@@ -5,8 +5,12 @@ import UIKit
 
 extension UIColor {
 
+    /// 0xaaaaadff
+    static let descriptionLabelList = UIColor(rgbaValue: 0xaaaaadff)
     /// 0xf3f5f9ff
     static let menuBackgorund = UIColor(rgbaValue: 0xf3f5f9ff)
+    /// 0xfd3a69ff
+    static let priceLabelList = UIColor(rgbaValue: 0xfd3a69ff)
     /// 0xffffffff
     static let tabBarBackground = UIColor(rgbaValue: 0xffffffff)
     /// 0xc3c4c9ff
@@ -17,6 +21,8 @@ extension UIColor {
     static let textMenuHorizontal = UIColor(rgbaValue: 0xfd3a69ff)
     /// 0x222831ff
     static let textTitleLabel = UIColor(rgbaValue: 0x222831ff)
+    /// 0x222831ff
+    static let titleLabelList = UIColor(rgbaValue: 0x222831ff)
 
     convenience init(rgbaValue: UInt32) {
         self.init(

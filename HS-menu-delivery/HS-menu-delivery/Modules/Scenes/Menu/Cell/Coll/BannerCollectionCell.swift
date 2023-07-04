@@ -19,8 +19,6 @@ final class BannerCollectionCell: UICollectionViewCell {
         }
     }
 
-    private var disposeBag = DisposeBag()
-
     private let bannerImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill

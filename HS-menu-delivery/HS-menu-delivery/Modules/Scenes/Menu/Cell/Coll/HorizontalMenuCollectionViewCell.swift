@@ -12,7 +12,7 @@ final class HorizontalMenuCollectionViewCell: UICollectionViewCell {
 
     static let cellID = "HorizontalMenuCollectionViewCellIndentifer"
 
-    private let nameCategoryLabel: UILabel = {
+    let nameCategoryLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .textMenuHorizontal.withAlphaComponent(0.4)

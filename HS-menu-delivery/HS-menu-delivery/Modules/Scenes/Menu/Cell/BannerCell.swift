@@ -10,7 +10,7 @@ import SnapKit
 
 class BannerCell: UITableViewCell {
 
-    private enum Constants {
+    enum Constants {
         static let widthItem = 300/375 * UIScreen.main.bounds.width
         static let heigthItem = 112/300 * widthItem
     }
@@ -26,7 +26,6 @@ class BannerCell: UITableViewCell {
 
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: Constants.widthItem, height: Constants.heigthItem)
         layout.scrollDirection = .horizontal
         return layout
     }()

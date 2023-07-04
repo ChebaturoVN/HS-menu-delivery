@@ -14,8 +14,8 @@
             filePath = "HS-menu-delivery/Modules/Scenes/Menu/Interactor/MenuInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "downloadMenu()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "HS-menu-delivery/Modules/Scenes/Menu/Interactor/MenuInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "downloadMenu()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "HS-menu-delivery/Modules/Scenes/Menu/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "HS-menu-delivery/Modules/Scenes/Menu/View/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "setup()"
             landmarkType = "7">
             <Locations>
@@ -114,6 +114,130 @@
                   offsetFromSymbolStart = "480">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6C3C671-56E9-4C0E-8CF8-ACB338C11FC9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HS-menu-delivery/Modules/Scenes/Menu/Presenter/MenuPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "loadModels(dataList:dataBanner:menu:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F6C3C671-56E9-4C0E-8CF8-ACB338C11FC9 - 500aede54ce75fc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async throws -&gt; HS_menu_delivery.ListProtyctModel in closure #2 (inout Swift.ThrowingTaskGroup&lt;HS_menu_delivery.ListProtyctModel, Swift.Error&gt;) async throws -&gt; Swift.Array&lt;HS_menu_delivery.ListProtyctModel&gt; in HS_menu_delivery.MenuPresenter.loadModels(dataList: Swift.Array&lt;HS_menu_delivery.MenuCellModel&gt;, dataBanner: Swift.Array&lt;HS_menu_delivery.BannerModel&gt;, menu: Swift.Array&lt;HS_menu_delivery.ListProtyctType&gt;) async -&gt; ()"
+                  moduleName = "HS-menu-delivery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vova/Documents/GitHub-project/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/Modules/Scenes/Menu/Presenter/MenuPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "F6C3C671-56E9-4C0E-8CF8-ACB338C11FC9 - 9c4c9b117bfc63c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async throws -&gt; HS_menu_delivery.ListProtyctModel in closure #2 (inout Swift.ThrowingTaskGroup&lt;HS_menu_delivery.ListProtyctModel, Swift.Error&gt;) async throws -&gt; Swift.Array&lt;HS_menu_delivery.ListProtyctModel&gt; in HS_menu_delivery.MenuPresenter.loadModels(dataList: Swift.Array&lt;HS_menu_delivery.MenuCellModel&gt;, dataBanner: Swift.Array&lt;HS_menu_delivery.BannerModel&gt;, menu: Swift.Array&lt;HS_menu_delivery.ListProtyctType&gt;) async -&gt; ()"
+                  moduleName = "HS-menu-delivery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vova/Documents/GitHub-project/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/Modules/Scenes/Menu/Presenter/MenuPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "620">
+               </Location>
+               <Location
+                  uuid = "F6C3C671-56E9-4C0E-8CF8-ACB338C11FC9 - fcfe60c393aff2f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async throws -&gt; HS_menu_delivery.ListProtyctModel in closure #2 (inout Swift.ThrowingTaskGroup&lt;HS_menu_delivery.ListProtyctModel, Swift.Error&gt;) async throws -&gt; Swift.Array&lt;HS_menu_delivery.ListProtyctModel&gt; in HS_menu_delivery.MenuPresenter.loadModels(dataList: Swift.Array&lt;HS_menu_delivery.MenuCellModel&gt;, dataBanner: Swift.Array&lt;HS_menu_delivery.BannerModel&gt;, menu: Swift.Array&lt;HS_menu_delivery.ListProtyctType&gt;) async -&gt; ()"
+                  moduleName = "HS-menu-delivery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vova/Documents/GitHub-project/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/Modules/Scenes/Menu/Presenter/MenuPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "F6C3C671-56E9-4C0E-8CF8-ACB338C11FC9 - 500aede54ce75fc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async throws -&gt; HS_menu_delivery.ListProtyctModel in closure #2 (inout Swift.ThrowingTaskGroup&lt;HS_menu_delivery.ListProtyctModel, Swift.Error&gt;) async throws -&gt; Swift.Array&lt;HS_menu_delivery.ListProtyctModel&gt; in HS_menu_delivery.MenuPresenter.loadModels(dataList: Swift.Array&lt;HS_menu_delivery.MenuCellModel&gt;, dataBanner: Swift.Array&lt;HS_menu_delivery.BannerModel&gt;, menu: Swift.Array&lt;HS_menu_delivery.ListProtyctType&gt;) async -&gt; ()"
+                  moduleName = "HS-menu-delivery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vova/Documents/GitHub-project/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/Modules/Scenes/Menu/Presenter/MenuPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "F6C3C671-56E9-4C0E-8CF8-ACB338C11FC9 - 8ef628a34a123dc7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #2 @Sendable () async throws -&gt; HS_menu_delivery.ListProtyctModel in closure #2 (inout Swift.ThrowingTaskGroup&lt;HS_menu_delivery.ListProtyctModel, Swift.Error&gt;) async throws -&gt; Swift.Array&lt;HS_menu_delivery.ListProtyctModel&gt; in HS_menu_delivery.MenuPresenter.loadModels(dataList: Swift.Array&lt;HS_menu_delivery.MenuCellModel&gt;, dataBanner: Swift.Array&lt;HS_menu_delivery.BannerModel&gt;, menu: Swift.Array&lt;HS_menu_delivery.ListProtyctType&gt;) async -&gt; ()"
+                  moduleName = "HS-menu-delivery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vova/Documents/GitHub-project/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/Modules/Scenes/Menu/Presenter/MenuPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "F6C3C671-56E9-4C0E-8CF8-ACB338C11FC9 - 9c4c9b117bfc63c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async throws -&gt; HS_menu_delivery.ListProtyctModel in closure #2 (inout Swift.ThrowingTaskGroup&lt;HS_menu_delivery.ListProtyctModel, Swift.Error&gt;) async throws -&gt; Swift.Array&lt;HS_menu_delivery.ListProtyctModel&gt; in HS_menu_delivery.MenuPresenter.loadModels(dataList: Swift.Array&lt;HS_menu_delivery.MenuCellModel&gt;, dataBanner: Swift.Array&lt;HS_menu_delivery.BannerModel&gt;, menu: Swift.Array&lt;HS_menu_delivery.ListProtyctType&gt;) async -&gt; ()"
+                  moduleName = "HS-menu-delivery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vova/Documents/GitHub-project/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/HS-menu-delivery/Modules/Scenes/Menu/Presenter/MenuPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22359B55-D810-41ED-AC99-84B0A81EF573"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HS-menu-delivery/Modules/Scenes/Menu/View/HorizontalMenuCollectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

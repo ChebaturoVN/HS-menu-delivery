@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Foundation
 
 protocol MenuPresenterLogic {
-    func presentData(data: [MenuCellModel], dataBanner: [BannerModel])
+    func presentData(data: [MenuCellModel], dataBanner: [BannerModel], menu: [ListProtyctType] )
 
 }
 
@@ -20,13 +21,13 @@ class MenuPresenter {
 // MARK: - Presentation logic
 
 extension MenuPresenter: MenuPresenterLogic {
-    func presentData(data: [MenuCellModel], dataBanner: [BannerModel]) {
+    func presentData(data: [MenuCellModel], dataBanner: [BannerModel], menu: [ListProtyctType]) {
         Task {
-            await loadModels(dataBanner)
+            await loadModels(dataList: data, dataBanner: dataBanner, menu: menu)
         }
     }
 
-    private func loadModels(_ dataBanner: [BannerModel]) async {
+    private func loadModels(dataList: [MenuCellModel], dataBanner: [BannerModel], menu: [ListProtyctType]) async {
         do {
             let model = try await withThrowingTaskGroup(of: BannerCellModel.self) { group in
                 for item in dataBanner {
@@ -43,7 +44,37 @@ extension MenuPresenter: MenuPresenterLogic {
                 }
                 return result
             }
-            viewController?.displayData(dataBanner: model)
+
+            let modelList = try await withThrowingTaskGroup(of: ListProtyctModel.self) { group in
+                for item in dataList {
+                    let lowercasedString = item.title.lowercased().components(separatedBy: " ")
+                    let lowercasedEnumValues = ListProtyctType.allCases.map { $0.rawValue.lowercased() }
+
+                    group.addTask {
+                        var matchingEnumCase: ListProtyctType?
+                        if let value: String = lowercasedString.first(where: { word in
+                            return lowercasedEnumValues.contains(word)
+                        }) {
+                            matchingEnumCase = ListProtyctType(rawValue: value.capitalized)
+                        }
+
+                        return try await ListProtyctModel(productImage: ImageManager.shared.loadImage(with: item.productUrl),
+                                                          title: item.title,
+                                                          description: item.description,
+                                                          price: item.price,
+                                                          type: matchingEnumCase ?? .other)
+                    }
+                }
+                var result: [ListProtyctModel] = []
+                for try await item in group {
+                    result.append(item)
+                }
+                return result
+            }
+
+            viewController?.displayData(dataBanner: model,
+                                        menu: menu,
+                                        dataList: modelList.sorted(by: { $0.type.rawValue > $1.type.rawValue}))
         } catch {
             return
         }

@@ -7,6 +7,18 @@
 
 import UIKit
 
+enum ListProtyctType: String, CaseIterable {
+    case piza = "Пицца"
+    case pasta = "Паста"
+    case pies = "Пироги"
+    case drinks = "Напитки"
+    case shawarma = "Шаурма"
+    case burgers = "Бургеры"
+    case gyros = "Гирос"
+    case frenchFries = "Картофель фри"
+    case other = "Другое"
+}
+
 struct BannerModel {
     let url: URL
     let desctiption: String
@@ -18,8 +30,16 @@ struct BannerCellModel {
 }
 
 struct MenuCellModel {
-    let productUrl: String
+    let productUrl: URL
     let title: String
     let description: String
     let price: String
+}
+
+struct ListProtyctModel {
+    let productImage: UIImage
+    let title: String
+    let description: String
+    let price: String
+    let type: ListProtyctType
 }

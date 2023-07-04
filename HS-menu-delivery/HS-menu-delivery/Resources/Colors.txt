@@ -5,4 +5,6 @@ tabBarNotSelect: C3C4C9
 menuBackgorund: F3F5F9
 textTitleLabel: 222831
 textMenuHorizontal: FD3A69
-
+titleLabelList: 222831
+descriptionLabelList: AAAAAD
+priceLabelList: FD3A69

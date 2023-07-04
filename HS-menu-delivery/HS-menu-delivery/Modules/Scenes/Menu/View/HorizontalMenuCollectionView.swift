@@ -6,18 +6,25 @@
 //
 
 import UIKit
-
-protocol SelectCollectionViewMenuItem: AnyObject {
-    func selectItem(index: IndexPath)
-}
+import RxSwift
+import RxRelay
+import RxCocoa
 
 final class HorizontalMenuCollectionView: UICollectionView {
 
     private let categoryLayout = UICollectionViewFlowLayout()
 
-    private let nameCategoryArray = ["Like", "Напитки", "Пицца", "Доставка", "Рекомендованное", "Одноразовая посуда"]
+    private(set) lazy var lastItemSelected = self.rx.itemSelected
+    let listToMenuScroll = PublishRelay<Int>()
 
-    weak var cellDelegate: SelectCollectionViewMenuItem?
+    let bag = DisposeBag()
+
+    var nameCategoryArray: [ListProtyctType] = [] {
+        didSet {
+            self.reloadData()
+            selectItem(at: [0, 0], animated: true, scrollPosition: [])
+        }
+    }
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: .zero, collectionViewLayout: categoryLayout)
@@ -42,7 +49,14 @@ final class HorizontalMenuCollectionView: UICollectionView {
         delegate = self
         dataSource = self
         register(HorizontalMenuCollectionViewCell.self, forCellWithReuseIdentifier: HorizontalMenuCollectionViewCell.cellID)
-        selectItem(at: [0, 0], animated: true, scrollPosition: [])
+
+        listToMenuScroll
+            .subscribe(onNext: { [weak self] value in
+                print(value)
+                self?.selectItem(at: IndexPath(row: value, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+            })
+            .disposed(by: bag)
+
     }
 }
 
@@ -58,7 +72,7 @@ extension HorizontalMenuCollectionView: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: HorizontalMenuCollectionViewCell.cellID,
             for: indexPath) as? HorizontalMenuCollectionViewCell else { return UICollectionViewCell() }
-        cell.nameCategoryLabel.text = nameCategoryArray[indexPath.item]
+        cell.nameCategoryLabel.text = nameCategoryArray[indexPath.item].rawValue
         return cell
     }
 }
@@ -68,7 +82,6 @@ extension HorizontalMenuCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        cellDelegate?.selectItem(index: indexPath)
     }
 }
 
@@ -80,7 +93,7 @@ extension HorizontalMenuCollectionView: UICollectionViewDelegateFlowLayout {
 
         let categoryFont = UIFont.systemFont(ofSize: 13)
         let categoryAttributes = [NSAttributedString.Key.font: categoryFont as Any]
-        let categoryWidth = nameCategoryArray[indexPath.item].size(withAttributes: categoryAttributes).width + 20
+        let categoryWidth = nameCategoryArray[indexPath.item].rawValue.size(withAttributes: categoryAttributes).width + 20
 
         return CGSize(width: categoryWidth,
                       height: collectionView.frame.height)

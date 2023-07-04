@@ -7,12 +7,22 @@
 
 import UIKit
 import SnapKit
+import RxRelay
+import RxSwift
 
 protocol MenuDisplayLogic: AnyObject {
-    func displayData(dataBanner: [BannerCellModel])
+    func displayData(dataBanner: [BannerCellModel], menu: [ListProtyctType], dataList: [ListProtyctModel])
 }
 
 final class MenuViewController: UIViewController {
+
+    enum Constants {
+        static var heightListCell: CGFloat = 1
+    }
+
+    private let dataList = PublishRelay<[ListProtyctModel]>()
+    private let listScroll = PublishRelay<Int>()
+    let bag = DisposeBag()
 
     // MARK: - External vars
     private(set) var router: MenuRouterLogic?
@@ -21,12 +31,21 @@ final class MenuViewController: UIViewController {
 
     private var interactor: MenuInteractorLogic?
     private var dataBannerToDisplay = [BannerCellModel]()
+    private var nameCategoryArray = [ListProtyctType]()
+    private var listProtyctData = [ListProtyctModel]()
 
     private var leftButtonNavBar: UIBarButtonItem = {
         let view = LeftButtonView()
         let barButtonItem = UIBarButtonItem(customView: view)
         return barButtonItem
     }()
+    private let headerFrame = CGRect(
+        x: 0,
+        y: 0,
+        width: UIScreen.main.bounds.width,
+        height: 32)
+
+    private let headerView: HorizontalMenuHeader
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -39,6 +58,7 @@ final class MenuViewController: UIViewController {
     }()
 
     init() {
+        headerView = HorizontalMenuHeader(frame: headerFrame)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -74,6 +94,7 @@ final class MenuViewController: UIViewController {
         view.backgroundColor = UIColor.menuBackgorund
         navigationItem.leftBarButtonItem = leftButtonNavBar
         configureTableView()
+        Constants.heightListCell = view.safeAreaLayoutGuide.layoutFrame.height - BannerCell.Constants.heigthItem
 
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -85,54 +106,107 @@ final class MenuViewController: UIViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.bounces = false
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(BannerCell.self,
                            forCellReuseIdentifier: BannerCell.cellIdentifier)
-        tableView.register(HorizontalMenuCell.self,
-                           forCellReuseIdentifier: HorizontalMenuCell.cellIdentifier)
+        tableView.register(VerticalListCell.self,
+                           forCellReuseIdentifier: VerticalListCell.cellIdentifier)
     }
 }
 
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: BannerCell.cellIdentifier,
                                                            for: indexPath) as? BannerCell else {
                 return UITableViewCell() }
             cell.dataBannerToDisplay = dataBannerToDisplay
             return cell
-        } else if indexPath.row == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: HorizontalMenuCell.cellIdentifier,
-                                                         for: indexPath) as? HorizontalMenuCell else {
+        } else if indexPath.section == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: VerticalListCell.cellIdentifier,
+                                                         for: indexPath) as? VerticalListCell else {
                 return UITableViewCell() }
-            cell.cellDelegate = self
+
+            dataList
+                .bind { value in
+                    cell.dataList.accept(value)
+            }
+            .disposed(by: bag)
+
+            listScroll
+                .bind { value in
+                    cell.listScroll.accept(value)
+                }
+                .disposed(by: bag)
+
+            cell.scrollToMenuIndex
+                .subscribe(onNext: { [weak self] indexPath in
+                    if let indexPath = indexPath,
+                       let item = self?.listProtyctData[indexPath.row],
+                       let index = self?.nameCategoryArray.firstIndex(where: { $0 == item.type }) {
+                        self?.headerView.listToMenuScroll.accept(index)
+                    }
+                })
+                .disposed(by: cell.bag)
+
             return cell
         }
         return UITableViewCell()
     }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            headerView.nameCategoryArray.accept(nameCategoryArray)
+            headerView
+                .itemSelected
+                .bind { [weak self] value in
+                    guard let value = value else { return }
+                    self?.searchDesiredCell(value)
+                }
+                .disposed(by: headerView.bag)
+
+            return headerView
+        }
+        return UIView()
+    }
+
+    func searchDesiredCell(_ indexPath: IndexPath) {
+        let element = nameCategoryArray[indexPath.row]
+        print(listProtyctData)
+        if let row = listProtyctData.firstIndex(where: {
+            $0.type == element
+        }) {
+            listScroll.accept(row)
+        }
+    }
 }
 
 extension MenuViewController: MenuDisplayLogic {
-    func displayData(dataBanner: [BannerCellModel]) {
+
+    func displayData(dataBanner: [BannerCellModel], menu: [ListProtyctType] , dataList: [ListProtyctModel]) {
         dataBannerToDisplay.removeAll()
         dataBannerToDisplay.append(contentsOf: dataBanner)
+        nameCategoryArray = menu
+        self.dataList.accept(dataList)
+        self.listProtyctData = dataList
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
 }
 
-extension MenuViewController: SelectCollectionViewMenuItem {
-    func selectItem(index: IndexPath) {
-        <#code#>
+extension MenuViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
     }
 }
