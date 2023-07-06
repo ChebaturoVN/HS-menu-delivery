@@ -1,4 +1,5 @@
 PODS:
+  - DropDown (2.3.13)
   - Kingfisher (7.8.1)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -11,6 +12,7 @@ PODS:
   - SwiftLint (0.45.1)
 
 DEPENDENCIES:
+  - DropDown
   - Kingfisher
   - RxCocoa
   - RxSwift
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - DropDown
     - Kingfisher
     - RxCocoa
     - RxRelay
@@ -29,6 +32,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -37,6 +41,6 @@ SPEC CHECKSUMS:
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
 
-PODFILE CHECKSUM: f7f2e3367b66599d0559a3bc356c8aeaa107a42b
+PODFILE CHECKSUM: 5a9f9f9c6abb1938754e46976c44d66689620683
 
 COCOAPODS: 1.12.1

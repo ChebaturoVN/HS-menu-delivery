@@ -9,16 +9,24 @@ import Foundation
 
 protocol MenuInteractorLogic {
     func downloadMenu()
+    func tapLeftButtonView()
 }
 
 class MenuInteractor {
+    private lazy var countryName: CountryNameServiceProtocol = CountryNameService()
 
+    private var listCity: [String]?
     // MARK: - External vars
     var presenter: MenuPresenterLogic?
 }
 
 // MARK: - Business logic
 extension MenuInteractor: MenuInteractorLogic {
+    func tapLeftButtonView() {
+        guard let listCity = listCity else { return }
+        self.presenter?.presentListCity(data: listCity)
+    }
+
     func downloadMenu() {
         var productResponse = [MenuCellModel]()
         if let url = URL(string: "https://feo.fidele-food.ru/wp-content/uploads/2023/01/panchetta-2.webp") {
@@ -78,7 +86,12 @@ extension MenuInteractor: MenuInteractorLogic {
         }
 
         let menuType: [ListProtyctType] = ListProtyctType.allCases
-        let menu = ["Like", "Напитки", "Пицца", "Доставка", "Рекомендованное", "Одноразовая посуда"]
+
+        countryName.getCityList { city in
+            if let city = city {
+                self.listCity = city
+            }
+        }
 
         presenter?.presentData(data: productResponse, dataBanner: bannerResponse, menu: menuType)
     }

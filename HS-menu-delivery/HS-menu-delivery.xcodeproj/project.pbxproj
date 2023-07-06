@@ -37,6 +37,9 @@
 		808A28AC2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28AB2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift */; };
 		808A28AE2A5337DD00A63997 /* VerticalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28AD2A5337DD00A63997 /* VerticalListCell.swift */; };
 		808A28B02A53497A00A63997 /* VerticalListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28AF2A53497A00A63997 /* VerticalListCollectionView.swift */; };
+		808A28B42A56F39B00A63997 /* CountryNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28B32A56F39B00A63997 /* CountryNameService.swift */; };
+		808A28B82A56F6CA00A63997 /* RESTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28B72A56F6CA00A63997 /* RESTManager.swift */; };
+		808A28BB2A5701CA00A63997 /* CityesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A28BA2A5701CA00A63997 /* CityesModel.swift */; };
 		80CAB80B2A4463EC0045663A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB80A2A4463EC0045663A /* AppDelegate.swift */; };
 		80CAB8152A4463EC0045663A /* HS_menu_delivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB8132A4463EC0045663A /* HS_menu_delivery.xcdatamodeld */; };
 		80CAB8172A4463ED0045663A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80CAB8162A4463ED0045663A /* Assets.xcassets */; };
@@ -104,6 +107,9 @@
 		808A28AB2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		808A28AD2A5337DD00A63997 /* VerticalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListCell.swift; sourceTree = "<group>"; };
 		808A28AF2A53497A00A63997 /* VerticalListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListCollectionView.swift; sourceTree = "<group>"; };
+		808A28B32A56F39B00A63997 /* CountryNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNameService.swift; sourceTree = "<group>"; };
+		808A28B72A56F6CA00A63997 /* RESTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTManager.swift; sourceTree = "<group>"; };
+		808A28BA2A5701CA00A63997 /* CityesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityesModel.swift; sourceTree = "<group>"; };
 		80CAB8072A4463EC0045663A /* HS-menu-delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HS-menu-delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CAB80A2A4463EC0045663A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80CAB8142A4463EC0045663A /* HS_menu_delivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HS_menu_delivery.xcdatamodel; sourceTree = "<group>"; };
@@ -289,6 +295,8 @@
 		808A28862A46F33300A63997 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				808A28B52A56F68300A63997 /* Managers */,
+				808A28B12A56F36700A63997 /* Services */,
 				808A28872A46F33E00A63997 /* Extensions */,
 			);
 			name = Core;
@@ -359,6 +367,47 @@
 				808A289F2A485D1300A63997 /* ImageManager.swift */,
 			);
 			name = ImageManager;
+			sourceTree = "<group>";
+		};
+		808A28B12A56F36700A63997 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				808A28B22A56F37700A63997 /* CountryName */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		808A28B22A56F37700A63997 /* CountryName */ = {
+			isa = PBXGroup;
+			children = (
+				808A28B92A5701B800A63997 /* Models */,
+				808A28B32A56F39B00A63997 /* CountryNameService.swift */,
+			);
+			name = CountryName;
+			sourceTree = "<group>";
+		};
+		808A28B52A56F68300A63997 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				808A28B62A56F69100A63997 /* Network */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		808A28B62A56F69100A63997 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				808A28B72A56F6CA00A63997 /* RESTManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		808A28B92A5701B800A63997 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				808A28BA2A5701CA00A63997 /* CityesModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		80CAB7FE2A4463EC0045663A = {
@@ -716,12 +765,14 @@
 				808A28922A4758EC00A63997 /* Fonts.swift in Sources */,
 				808A28AE2A5337DD00A63997 /* VerticalListCell.swift in Sources */,
 				808A28A22A49E9A200A63997 /* HorizontalMenuCollectionView.swift in Sources */,
+				808A28BB2A5701CA00A63997 /* CityesModel.swift in Sources */,
 				808A28602A44E32500A63997 /* Colors.swift in Sources */,
 				808A28642A44E39F00A63997 /* Strings.swift in Sources */,
 				80CAB80B2A4463EC0045663A /* AppDelegate.swift in Sources */,
 				80CAB8152A4463EC0045663A /* HS_menu_delivery.xcdatamodeld in Sources */,
 				808A28A62A4C255F00A63997 /* HorizontalMenuHeader.swift in Sources */,
 				808A28AC2A52EC5E00A63997 /* VerticalListProductsCollectionViewCell.swift in Sources */,
+				808A28B42A56F39B00A63997 /* CountryNameService.swift in Sources */,
 				808A28622A44E38400A63997 /* Images.swift in Sources */,
 				808A28992A476EA000A63997 /* BannerCellModel.swift in Sources */,
 				808A28902A46FA1E00A63997 /* LeftButtonView.swift in Sources */,
@@ -731,6 +782,7 @@
 				808A28512A449C1C00A63997 /* MenuPresenter.swift in Sources */,
 				808A288A2A46F36100A63997 /* UIView+AddSubviews.swift in Sources */,
 				808A287D2A45A0F700A63997 /* TabItem.swift in Sources */,
+				808A28B82A56F6CA00A63997 /* RESTManager.swift in Sources */,
 				808A28852A46E95200A63997 /* BannerCell.swift in Sources */,
 				808A28792A459AD900A63997 /* TabBarController.swift in Sources */,
 				808A289B2A482ECC00A63997 /* MenuRouter.swift in Sources */,

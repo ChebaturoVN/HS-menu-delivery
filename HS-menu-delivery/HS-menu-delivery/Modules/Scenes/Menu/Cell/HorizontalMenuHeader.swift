@@ -49,8 +49,6 @@ final class HorizontalMenuHeader: UITableViewHeaderFooterView {
             .disposed(by: menuCollection.bag)
         listToMenuScroll
             .subscribe(onNext: { [weak self] value in
-                print(value)
-
                 self?.menuCollection.listToMenuScroll.accept(value)
             })
             .disposed(by: bag)

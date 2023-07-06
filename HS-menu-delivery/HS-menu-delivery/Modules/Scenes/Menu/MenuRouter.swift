@@ -17,6 +17,5 @@ class MenuRouter {
 
 extension MenuRouter: MenuRouterLogic {
     func navigateToDetails() {
-//        viewController?.navigationController?.pushViewController(<#T##UIViewController#>, animated: <#T##Bool#>)
     }
 }

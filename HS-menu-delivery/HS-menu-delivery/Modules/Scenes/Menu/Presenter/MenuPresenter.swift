@@ -9,8 +9,8 @@ import UIKit
 import Foundation
 
 protocol MenuPresenterLogic {
-    func presentData(data: [MenuCellModel], dataBanner: [BannerModel], menu: [ListProtyctType] )
-
+    func presentData(data: [MenuCellModel], dataBanner: [BannerModel], menu: [ListProtyctType])
+    func presentListCity(data: [String])
 }
 
 class MenuPresenter {
@@ -21,6 +21,11 @@ class MenuPresenter {
 // MARK: - Presentation logic
 
 extension MenuPresenter: MenuPresenterLogic {
+    func presentListCity(data: [String]) {
+
+        viewController?.presentCountry(data: data)
+    }
+
     func presentData(data: [MenuCellModel], dataBanner: [BannerModel], menu: [ListProtyctType]) {
         Task {
             await loadModels(dataList: data, dataBanner: dataBanner, menu: menu)

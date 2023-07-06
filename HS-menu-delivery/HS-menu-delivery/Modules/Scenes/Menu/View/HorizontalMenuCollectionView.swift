@@ -12,7 +12,12 @@ import RxCocoa
 
 final class HorizontalMenuCollectionView: UICollectionView {
 
-    private let categoryLayout = UICollectionViewFlowLayout()
+    private let layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 5
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
 
     private(set) lazy var lastItemSelected = self.rx.itemSelected
     let listToMenuScroll = PublishRelay<Int>()
@@ -27,7 +32,7 @@ final class HorizontalMenuCollectionView: UICollectionView {
     }
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: .zero, collectionViewLayout: categoryLayout)
+        super.init(frame: .zero, collectionViewLayout: self.layout)
 
         configure()
     }
@@ -37,8 +42,6 @@ final class HorizontalMenuCollectionView: UICollectionView {
     }
 
     private func configure() {
-        categoryLayout.minimumInteritemSpacing = 5
-        categoryLayout.scrollDirection = .horizontal
 
         backgroundColor = .none
         translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +55,6 @@ final class HorizontalMenuCollectionView: UICollectionView {
 
         listToMenuScroll
             .subscribe(onNext: { [weak self] value in
-                print(value)
                 self?.selectItem(at: IndexPath(row: value, section: 0), animated: true, scrollPosition: .centeredHorizontally)
             })
             .disposed(by: bag)

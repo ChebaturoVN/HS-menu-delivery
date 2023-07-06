@@ -9,9 +9,11 @@ import UIKit
 import SnapKit
 import RxRelay
 import RxSwift
+import DropDown
 
 protocol MenuDisplayLogic: AnyObject {
     func displayData(dataBanner: [BannerCellModel], menu: [ListProtyctType], dataList: [ListProtyctModel])
+    func presentCountry(data: [String])
 }
 
 final class MenuViewController: UIViewController {
@@ -22,6 +24,7 @@ final class MenuViewController: UIViewController {
 
     private let dataList = PublishRelay<[ListProtyctModel]>()
     private let listScroll = PublishRelay<Int>()
+
     let bag = DisposeBag()
 
     // MARK: - External vars
@@ -30,15 +33,19 @@ final class MenuViewController: UIViewController {
     // MARK: - Internal vars
 
     private var interactor: MenuInteractorLogic?
+
     private var dataBannerToDisplay = [BannerCellModel]()
     private var nameCategoryArray = [ListProtyctType]()
     private var listProtyctData = [ListProtyctModel]()
 
-    private var leftButtonNavBar: UIBarButtonItem = {
-        let view = LeftButtonView()
-        let barButtonItem = UIBarButtonItem(customView: view)
+    private let menu = DropDown()
+    private lazy var leftButtonView = LeftButtonView()
+
+    private lazy var leftButtonNavBar: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(customView: self.leftButtonView)
         return barButtonItem
     }()
+
     private let headerFrame = CGRect(
         x: 0,
         y: 0,
@@ -95,6 +102,17 @@ final class MenuViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftButtonNavBar
         configureTableView()
         Constants.heightListCell = view.safeAreaLayoutGuide.layoutFrame.height - BannerCell.Constants.heigthItem
+
+        let tapLeftButtonView = self.leftButtonView.tapGesture.rx.event.asObservable()
+
+        tapLeftButtonView.subscribe(onNext: { _ in
+            self.interactor?.tapLeftButtonView()
+        }).disposed(by: bag)
+
+        menu.anchorView = self.navigationController?.navigationBar
+        menu.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.leftButtonView.setTitle = item
+        }
 
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -177,12 +195,11 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
 
             return headerView
         }
-        return UIView()
+        return UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     }
 
     func searchDesiredCell(_ indexPath: IndexPath) {
         let element = nameCategoryArray[indexPath.row]
-        print(listProtyctData)
         if let row = listProtyctData.firstIndex(where: {
             $0.type == element
         }) {
@@ -192,15 +209,20 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MenuViewController: MenuDisplayLogic {
+    func presentCountry(data: [String]) {
+        menu.dataSource = data
+        menu.show()
+    }
 
-    func displayData(dataBanner: [BannerCellModel], menu: [ListProtyctType] , dataList: [ListProtyctModel]) {
-        dataBannerToDisplay.removeAll()
-        dataBannerToDisplay.append(contentsOf: dataBanner)
-        nameCategoryArray = menu
-        self.dataList.accept(dataList)
-        self.listProtyctData = dataList
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+    func displayData(dataBanner: [BannerCellModel], menu: [ListProtyctType], dataList: [ListProtyctModel]) {
+
+            dataBannerToDisplay.removeAll()
+            dataBannerToDisplay.append(contentsOf: dataBanner)
+            nameCategoryArray = menu
+            self.dataList.accept(dataList)
+            listProtyctData = dataList
+        Task {
+            tableView.reloadData()
         }
     }
 }

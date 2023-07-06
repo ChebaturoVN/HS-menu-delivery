@@ -11,6 +11,7 @@ target 'HS-menu-delivery' do
   pod 'SwiftGen'
   pod 'SwiftLint'
   pod 'Kingfisher'
+  pod 'DropDown'
 
   # Pods for HS-menu-delivery
 

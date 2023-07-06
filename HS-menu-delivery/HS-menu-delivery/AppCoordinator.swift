@@ -17,12 +17,6 @@ final class AppCoordinator {
     }
 
     func start() -> UIViewController {
-//        let navController = UINavigationController()
-//        navController.navigationBar.backIndicatorImage = .back
-//        navController.navigationBar.backIndicatorTransitionMaskImage = .back
-//        let viewController = ViewController()
-//        navController.setViewControllers([viewController], animated: true)
-//        navigationController = navController
         return showTabBar()
     }
 

@@ -9,6 +9,15 @@ import UIKit
 
 final class LeftButtonView: UIView {
 
+    let tapGesture = UITapGestureRecognizer()
+
+    var setTitle: String? {
+        didSet {
+            guard let title = setTitle else { return }
+            titleLabel.text = title
+        }
+    }
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 17)
@@ -23,6 +32,7 @@ final class LeftButtonView: UIView {
     init() {
         super.init(frame: .zero)
         setUpUI()
+        setupGesture()
     }
 
     required init?(coder: NSCoder) {
@@ -42,5 +52,11 @@ final class LeftButtonView: UIView {
             make.width.equalTo(14)
             make.height.equalTo(8)
         }
+    }
+
+    private func setupGesture() {
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        self.addGestureRecognizer(tapGesture)
     }
 }

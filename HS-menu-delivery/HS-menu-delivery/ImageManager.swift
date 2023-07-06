@@ -13,21 +13,6 @@ final class ImageManager {
 
     private init() {}
 
-    func getImage(imageURL: URL, completion: @escaping (UIImage?) -> Void) {
-        KingfisherManager.shared.retrieveImage(with: imageURL,
-                                               options: nil,
-                                               progressBlock: nil,
-                                               downloadTaskUpdated: nil,
-                                               completionHandler: { result in
-            switch result {
-            case .success(let result):
-                completion(result.image)
-            case .failure:
-                completion(nil)
-            }
-        })
-    }
-
     func loadImage(with imageURL: URL) async throws -> UIImage {
         let data = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<UIImage, Error>) in
             KingfisherManager.shared.retrieveImage(with: imageURL,

@@ -14,20 +14,13 @@ final class VerticalListCell: UITableViewCell {
 
     static let cellIdentifier: String = "VerticalListCell"
 
-    var dataList = PublishRelay<[ListProtyctModel]>()
+    let dataList = PublishRelay<[ListProtyctModel]>()
     let listScroll = PublishRelay<Int>()
     let scrollToMenuIndex = PublishRelay<IndexPath?>()
 
     let bag = DisposeBag()
 
     private let listCollection = VerticalListCollectionView()
-
-    private let container: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 30
-        view.layer.masksToBounds = true
-        return view
-    }()
 
     override init(style: UITableViewCell.CellStyle,
                   reuseIdentifier: String?) {
@@ -61,14 +54,11 @@ final class VerticalListCell: UITableViewCell {
         })
             .disposed(by: listCollection.bag)
 
-        contentView.addSubview(container)
-        container.addSubview(listCollection)
+        backgroundColor = .clear
+        contentView.addSubview(listCollection)
     }
 
     private func setuplayout() {
-        container.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
         listCollection.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.trailing.leading.bottom.equalToSuperview()

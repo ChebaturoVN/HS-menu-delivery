@@ -17,9 +17,12 @@ final class VerticalListCollectionView: UICollectionView {
         VerticalListProductsCollectionViewCell.Constants.widthItem - 53
     }
 
-    var dataList = PublishRelay<[ListProtyctModel]>()
-    var scrollToIndex = PublishRelay<IndexPath>()
-    var scrollToMenuIndex = PublishRelay<IndexPath?>()
+    private(set) var dataList = PublishRelay<[ListProtyctModel]>()
+    private(set) var scrollToIndex = PublishRelay<IndexPath>()
+    private(set) var scrollToMenuIndex = PublishRelay<IndexPath?>()
+    private(set) lazy var lastItemSelected = self.rx.itemSelected
+
+    let bag = DisposeBag()
 
     private var listModel = [ListProtyctModel]() {
         didSet {
@@ -29,13 +32,15 @@ final class VerticalListCollectionView: UICollectionView {
         }
     }
 
-    private(set) lazy var lastItemSelected = self.rx.itemSelected
-    let bag = DisposeBag()
-
-    private let categoryLayout = UICollectionViewFlowLayout()
+    private var categoryLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .vertical
+        return layout
+    }()
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: .zero, collectionViewLayout: categoryLayout)
+        super.init(frame: .zero, collectionViewLayout: self.categoryLayout)
 
         configure()
     }
@@ -45,8 +50,7 @@ final class VerticalListCollectionView: UICollectionView {
     }
 
     private func configure() {
-        categoryLayout.minimumInteritemSpacing = 1
-        categoryLayout.scrollDirection = .vertical
+
         backgroundColor = .none
         bounces = false
 
@@ -129,5 +133,11 @@ extension VerticalListCollectionView: UICollectionViewDelegateFlowLayout {
         let heightItem = titleLabelHeight + descriptionsLabelHeight + priceLabelHeight
 
         return heightItem
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
 }

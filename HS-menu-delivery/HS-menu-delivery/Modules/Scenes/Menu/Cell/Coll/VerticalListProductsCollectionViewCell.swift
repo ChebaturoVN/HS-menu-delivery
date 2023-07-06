@@ -83,8 +83,27 @@ final class VerticalListProductsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupViews() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
 
+        if let collectionView = superview as? UICollectionView,
+           let indexPath = collectionView.indexPath(for: self),
+            indexPath.row == 0 {
+            let cornerRadius: CGFloat = 30
+
+            let maskPath = UIBezierPath(roundedRect: bounds,
+                                        byRoundingCorners: [.topLeft, .topRight],
+                                        cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+            let maskLayer = CAShapeLayer()
+            maskLayer.path = maskPath.cgPath
+            layer.mask = maskLayer
+        } else {
+            layer.mask = nil
+        }
+    }
+
+    private func setupViews() {
+        backgroundColor = .white
         addSubviews(imageProduct, titleLabel, descriptionsLabel, priceView)
         priceView.addSubview(priceLabel)
     }
