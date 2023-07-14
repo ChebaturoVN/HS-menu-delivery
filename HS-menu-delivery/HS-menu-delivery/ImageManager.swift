@@ -23,8 +23,8 @@ final class ImageManager {
                 switch result {
                 case .success(let result):
                     continuation.resume(returning: result.image)
-                case .failure(let error):
-                    continuation.resume(throwing: error)
+                case .failure(_):
+                    continuation.resume(returning: UIImage(named: "notImagePizza") ?? UIImage())
                 }
             })
         }
